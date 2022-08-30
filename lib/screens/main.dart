@@ -12,7 +12,7 @@ void main() => runApp(Jobber());
 
 
 class Jobber extends StatelessWidget {
-  static const title = 'native splash screen';
+  static const title = 'upload Flutter To GitHub';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
