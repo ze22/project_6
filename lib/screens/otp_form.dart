@@ -46,7 +46,7 @@ class _OtpFormState extends State<OtpForm> {
                     alignment: Alignment.center,
                     child: Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Text("opt Verification",
+                      child: Text("otp Verification",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 37,
@@ -58,7 +58,7 @@ class _OtpFormState extends State<OtpForm> {
                     child: Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Text(
-                        "check your mail for opt code! ",
+                        "check your mail for otp code! ",
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 20,
