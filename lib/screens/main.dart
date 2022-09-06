@@ -17,9 +17,11 @@ class Jobber extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(
-      //   primaryColor: Colors.blue.shade300,
-      // ),
+      theme: ThemeData(
+        primaryColor: Colors.blue.shade400,
+        dividerColor: Colors.black,
+        
+      ),
       home: WelcomePage(),
     );
   }

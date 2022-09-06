@@ -4,6 +4,7 @@ class CustomizedTextfield extends StatelessWidget {
   final TextEditingController myController;
   final String? hintText;
   final bool? isPassword;
+  
   // bool obscure = false;
   // final bool? myController;
   bool _containsANumber = false;
@@ -23,7 +24,7 @@ class CustomizedTextfield extends StatelessWidget {
             : TextInputType.emailAddress,
         enableSuggestions: isPassword! ? false : true,
         autocorrect: isPassword! ? false : true,
-        obscureText: isPassword ?? true,
+        obscureText: isPassword ?? false,
         controller: myController,
         // onChanged: (value) {
         //   setState
@@ -47,7 +48,7 @@ class CustomizedTextfield extends StatelessWidget {
                   },
                 )
               : null,
-
+          
           // enabledBorder: OutlineInputBorder(
           //     borderSide: const BorderSide(color: Color(0xffffffff), width: 1),
           //     borderRadius: BorderRadius.circular(10)),

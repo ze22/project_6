@@ -1,6 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:flutter_guide/screens/profile_screen.dart';
 import 'package:flutter_guide/screens/registeration%20_form.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -101,12 +102,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   // prefixIcon: const Icon(Icons.lock, color: Colors.black),
                 ),
                 CustomizedButton(
-                  buttonText: "Next",
+                  buttonText: "Register",
                   buttonColor: const Color(0xff07526A),
                   textcolor: Colors.white,
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const RegisterationForm()));
+                        MaterialPageRoute(builder: (_) => const ProfileScreen()));
                   },
                 ),
                 Padding(
