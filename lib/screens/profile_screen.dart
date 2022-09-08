@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_guide/screens/registeration%20_form.dart';
 import 'package:flutter_guide/utils/user_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_guide/widgets/drawer.dart';
@@ -21,7 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     
-    final user = userPreferences.myUser;
+    final user = userPreferences.getUser();
 
     return Scaffold(
     // (endDrawer: AppDrawer(),
@@ -61,8 +62,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           ProfileWidget(
             imagePath: user.imagePath,
-            onClicked:() async{},
+            onClicked:() async{
+              await Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => RegisterationForm()
+                ),
+              );
+
+              setState(() {
+                
+              });
+            },
           ),
+          
+          
+          
+          
           SizedBox(height: 18),
           buidName(user),
           SizedBox(height: 8),

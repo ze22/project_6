@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
  
 
@@ -29,13 +31,16 @@ import 'package:flutter/material.dart';
     );
   }
   Widget buildImage() {
-    final image  = imagePath;
+    final image  = imagePath.contains('https://')
+    ? NetworkImage(imagePath)
+    : FileImage(File(imagePath));
      
      return ClipOval(
        child: Material(
          color: Colors.transparent,
          child: Ink.image(
-           image : AssetImage("assets/test.png"),
+           image : image as ImageProvider,
+          //  image : AssetImage("assets/test.png"),
            fit: BoxFit.cover,
            width: 128,
            height: 128,

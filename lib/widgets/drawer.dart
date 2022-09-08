@@ -17,7 +17,7 @@ class _AppDrawerState extends State<AppDrawer> {
     return Drawer(
       
       child: Container(
-        color: Colors.black,
+        color: Color(0xff07526A),
         child: ListView(
           children: <Widget>[
             SizedBox(height: 48),

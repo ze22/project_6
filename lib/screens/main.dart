@@ -1,14 +1,23 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'WelcomePage.dart';
+import 'package:flutter_guide/utils/user_preferences.dart';
 
 
-void main() => runApp(Jobber());
 
-//void main(){
-// runApp(MyApp())
-//}
+
+
+// void main() => runApp(Jobber());
+
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await userPreferences.init();
+
+runApp(Jobber());
+}
 
 
 class Jobber extends StatelessWidget {
