@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_guide/screens/forgot_password.dart';
+import 'package:flutter_guide/screens/search_screen.dart';
 import 'package:flutter_guide/screens/signup_screen.dart';
 import 'package:flutter_guide/widgets/customized_textfield.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/customize_button.dart';
+import '../providers/auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,8 +17,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordControler = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordControler = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -108,10 +111,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     buttonColor: const Color(0xff07526A),
                     textcolor: Colors.white,
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (_) => const LoginScreen()));
+                      final authProvider =
+                          Provider.of<Auth>(context, listen: false);
+                      authProvider.login(
+                          _emailController.text, _passwordControler.text);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => const lookup()));
                     },
                   ),
                   Padding(
