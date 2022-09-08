@@ -1,4 +1,4 @@
-import 'package:flutter_guide/model/user.dart';
+import 'package:flutter_guide/models/user.dart';
 
 
 class userPreferences{

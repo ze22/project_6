@@ -1,15 +1,27 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'WelcomePage.dart';
+import '../providers/auth.dart';
 
-
-void main() => runApp(Jobber());
+void main() => runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => Auth(),
+          ),
+          Provider(
+            create: (context) => WelcomePage(),
+          )
+        ],
+        child: Jobber(),
+      ),
+    );
 
 //void main(){
 // runApp(MyApp())
 //}
-
 
 class Jobber extends StatelessWidget {
   static const title = 'upload Flutter To GitHub';
@@ -20,7 +32,6 @@ class Jobber extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue.shade400,
         dividerColor: Colors.black,
-        
       ),
       home: WelcomePage(),
     );

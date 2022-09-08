@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomizedTextfield extends StatelessWidget {
-  final TextEditingController myController;
+   TextEditingController myController;
   final String? hintText;
   final bool? isPassword;
   

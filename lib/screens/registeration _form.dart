@@ -3,8 +3,9 @@ import 'package:flutter_guide/utils/user_preferences.dart';
 import 'package:flutter_guide/widgets/customized_textfield.dart';
 import 'package:flutter_guide/widgets/profile_widget.dart';
 
-import '../model/user.dart';
+import '../models/user.dart';
 import '../widgets/textfield_Widget.dart';
+import '../providers/register_employees.dart';
 
 class RegisterationForm extends StatefulWidget {
   const RegisterationForm({Key? key}) : super(key: key);
@@ -15,8 +16,8 @@ class RegisterationForm extends StatefulWidget {
 
 class _MyWidgetState extends State<RegisterationForm> {
   final TextEditingController _fullnameController = TextEditingController();
-   TextEditingController _dateController = TextEditingController();
-  final      TextEditingController _adddressController = TextEditingController();
+  TextEditingController _dateController = TextEditingController();
+  final TextEditingController _adddressController = TextEditingController();
   User user = userPreferences.myUser;
   // late String valueChoose;
   // List listItem = [
@@ -31,7 +32,6 @@ class _MyWidgetState extends State<RegisterationForm> {
           icon: Icon(
             Icons.arrow_back,
             color: Colors.black,
-
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -42,7 +42,7 @@ class _MyWidgetState extends State<RegisterationForm> {
         // IconButton(
         //   icon: Icon(icon),
         //   onPressed: () {
-            
+
         //   },
         //   )
       ),
@@ -51,52 +51,47 @@ class _MyWidgetState extends State<RegisterationForm> {
         physics: BouncingScrollPhysics(),
         children: [
           ProfileWidget(
-            imagePath: user.imagePath, 
-            isEdit: true,
-            onClicked: () async {}
-            ),
-            SizedBox(height: 20),
-            TextFieldWidget(
-              label: 'Full Name',
-              text: user.name,
-              onChanged:(name){},
-            ),
-            SizedBox(height: 20),
-            TextFieldWidget(
-              label: 'Occupation',
-              text: user.occupation,
-              onChanged: (occupation) {},
-            ),
-            SizedBox(height: 20),
-            TextFieldWidget(
-              label: 'Region',
-              text: user.region,
-              onChanged: (region) {},
-            ),
-            SizedBox(height: 20),
-            TextFieldWidget(
-              label: 'Address',
-              text: user.address,
-              onChanged: (address) {},
-            ),
-            SizedBox(height: 20),
-            TextFieldWidget(
-              label: 'Education',
-              text: user.education,
-            maxLines:4,
-              onChanged: (Education) {},
-            ),
-            SizedBox(height: 20),
-            TextFieldWidget(
-              label: 'Sex',
-              text: user.sex,
+              imagePath: user.imagePath, isEdit: true, onClicked: () async {}),
+          SizedBox(height: 20),
+          TextFieldWidget(
+            label: 'Full Name',
+            text: user.name,
+            onChanged: (name) {},
+          ),
+          SizedBox(height: 20),
+          TextFieldWidget(
+            label: 'Occupation',
+            text: user.occupation,
+            onChanged: (occupation) {},
+          ),
+          SizedBox(height: 20),
+          TextFieldWidget(
+            label: 'Region',
+            text: user.region,
+            onChanged: (region) {},
+          ),
+          SizedBox(height: 20),
+          TextFieldWidget(
+            label: 'Address',
+            text: user.address,
+            onChanged: (address) {},
+          ),
+          SizedBox(height: 20),
+          TextFieldWidget(
+            label: 'Education',
+            text: user.education,
+            maxLines: 4,
+            onChanged: (Education) {},
+          ),
+          SizedBox(height: 20),
+          TextFieldWidget(
+            label: 'Sex',
+            text: user.sex,
             // maxLines:2,
-              onChanged: (sex) {},
-            )
-
+            onChanged: (sex) {},
+          )
         ],
       ),
-
     );
   }
 }
