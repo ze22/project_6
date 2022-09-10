@@ -107,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   textcolor: Colors.white,
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const ProfileScreen()));
+                        MaterialPageRoute(builder: (_) => const LoginScreen()));
                   },
                 ),
                 Padding(
@@ -137,7 +137,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 60,
                         width: 100,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey, width: 1),
+                            border: Border.all(color: Colors.transparent, width: 1),
                             borderRadius: BorderRadius.circular(10)),
                         child: IconButton(
                           icon: const Icon(
@@ -151,7 +151,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 60,
                         width: 100,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 1),
+                            border: Border.all(color: Colors.transparent, width: 1),
                             borderRadius: BorderRadius.circular(10)),
                         child: IconButton(
                           icon: const Icon(
@@ -165,7 +165,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 60,
                         width: 100,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey, width: 1),
+                            border: Border.all(color: Colors.transparent, width: 1),
                             borderRadius: BorderRadius.circular(10)),
                         child: IconButton(
                           icon: const Icon(
@@ -182,7 +182,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 50,
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(48, 8, 8, 8.0),
+                  padding: const EdgeInsets.fromLTRB(58, 8, 8, 8.0),
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -203,7 +203,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         child: const Text(
                           " Login",
                           style: TextStyle(
-                            color: Colors.green,
+                            color: Color(0xff07526A),
                             fontSize: 20,
                           ),
                         ),
@@ -213,7 +213,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 )
               ],
             )),
-      )),
+      )
+      ),
     );
   }
 }
